@@ -1,7 +1,7 @@
 #### 一、Spring Cloud核心组件：Eureka
-   Eureka是微服务架构中的注册中心，专门负责服务的注册与发现。
-   Eureka Client：负责将这个服务的信息注册到Eureka Server中
-   Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号
+   1. Eureka是微服务架构中的注册中心，专门负责服务的注册与发现。
+   1. Eureka Client：负责将这个服务的信息注册到Eureka Server中
+   1. Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号
 #### 二、Spring Cloud核心组件：Feign
     Feign的一个关键机制就是使用了动态代理。
     首先，如果你对某个接口定义了@FeignClient注解，Feign就会针对这个接口创建一个动态代理
