@@ -1,0 +1,60 @@
+#本地/本机环境配置文件
+
+#网关服务名称配置
+spring:
+  application:
+    name: app-zuul
+
+
+#网关端口配置
+server:
+  port: 5555
+
+#中间件注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://wsb:wsb@localhost:1111/eureka/  #中间件注册中心配置，默认使用用户密码登录
+  instance:
+    prefer-ip-address: true
+
+
+#网关代理配置
+zuul:
+  routes:
+    app-server1:
+        path: /server1/**
+        sensitiveHeaders:
+        serviceId: app-server
+    app-server2:
+        path: /server2/**
+        sensitiveHeaders:
+        serviceId: app-server2
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+#hystrix:
+#    command:
+#      default:
+#        execution:
+#          isolation:
+#            thread:
+#              timeoutInMilliseconds: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+
+
+#日志配置信息
+logging:
+  level:
+    com.app: DEBUG
+
+
+#白名单
+white-url: /oauth/token
+
+#下次access_token失效的时间
+validitySeconds: 18000

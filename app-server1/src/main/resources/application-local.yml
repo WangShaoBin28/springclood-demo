@@ -1,0 +1,22 @@
+server:
+  port: 2222
+spring:
+  application:
+    name: app-server
+
+eureka:
+    instance:
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 5   #心跳间隔设置  5秒
+      lease-expiration-duration-in-seconds: 10  #没有心跳的淘汰时间设计 10秒
+    client:
+      service-url:
+        defaultZone: http://wsb:wsb@localhost:1111/eureka/  #中间件注册中心配置，默认使用用户密码登录
+      registry-fetch-interval-seconds: 5 #定时刷新本地环境时间设置
+
+logging:
+  level:
+    com.app: debug
+
+#feign调用的项目
+app-server2: app-server2
