@@ -39,3 +39,9 @@
 ![Image text](https://user-gold-cdn.xitu.io/2018/11/7/166ec006b1536f43?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 参考SpringCloud中文文档  https://springcloud.cc/spring-cloud-brixton.html
+
+
+项目启动顺序
+eureka -->zuul -->server1 -->server2
+
+启动成功后访问 http://localhost:5555/server2/api/index
