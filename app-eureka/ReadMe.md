@@ -1,15 +1,15 @@
-####一、Spring Cloud核心组件：Eureka
+#### 一、Spring Cloud核心组件：Eureka
    Eureka是微服务架构中的注册中心，专门负责服务的注册与发现。
    Eureka Client：负责将这个服务的信息注册到Eureka Server中
    Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号
-####二、Spring Cloud核心组件：Feign
+#### 二、Spring Cloud核心组件：Feign
     Feign的一个关键机制就是使用了动态代理。
     首先，如果你对某个接口定义了@FeignClient注解，Feign就会针对这个接口创建一个动态代理
     接着你要是调用那个接口，本质就是会调用 Feign创建的动态代理，这是核心中的核心
     Feign的动态代理会根据你在接口上的@RequestMapping等注解，来动态构造出你要请求的服务的地址
     最后针对这个地址，发起请求、解析响应
     
-####三、Spring Cloud核心组件：Ribbon
+#### 三、Spring Cloud核心组件：Ribbon
     Ribbon它的作用是负载均衡，会帮你在每次请求时选择一台机器，均匀的把请求分发到各个机器上
     Ribbon的负载均衡默认使用的最经典的Round Robin轮询算法。这是啥？简单来说，就是如果订单服务对库存服务发起10次请求，那就先让你请求第1台机器、然后是第2台机器、第3台机器、第4台机器、第5台机器，接着再来—个循环，第1台机器、第2台机器。。。以此类推。
     工作流程
