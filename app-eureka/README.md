@@ -8,7 +8,6 @@
     接着你要是调用那个接口，本质就是会调用 Feign创建的动态代理，这是核心中的核心
     Feign的动态代理会根据你在接口上的@RequestMapping等注解，来动态构造出你要请求的服务的地址
     最后针对这个地址，发起请求、解析响应
-    
 #### 三、Spring Cloud核心组件：Ribbon
     Ribbon它的作用是负载均衡，会帮你在每次请求时选择一台机器，均匀的把请求分发到各个机器上
     Ribbon的负载均衡默认使用的最经典的Round Robin轮询算法。这是啥？简单来说，就是如果订单服务对库存服务发起10次请求，那就先让你请求第1台机器、然后是第2台机器、第3台机器、第4台机器、第5台机器，接着再来—个循环，第1台机器、第2台机器。。。以此类推。
@@ -36,7 +35,6 @@
     Feign：基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求
     Hystrix：发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题
     Zuul：如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务
-    
 #### ![Image text](https://user-gold-cdn.xitu.io/2018/11/7/166ec006b1536f43?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 #### 参考SpringCloud中文文档  https://springcloud.cc/spring-cloud-brixton.html
