@@ -4,6 +4,18 @@ spring:
   application:
     name: app-server
 
+#ribbon配置时长，处理超时
+ribbon:
+  eureka:
+    enabled: true
+  hystrix:
+    enabled: false
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 3
+  MaxAutoRetries: 3
+
 eureka:
     instance:
       prefer-ip-address: true
